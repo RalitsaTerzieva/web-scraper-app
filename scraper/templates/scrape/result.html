@@ -11,10 +11,24 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-        
-        {% for link in data %}
-            {{ link.name }}----->{{ link.address }}<br/>
-        {% endfor %}
+        <table class="table table-striped">
+            <thead>
+              <tr class='table-primary'>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Link</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for link in data %}
+              <tr class='table-warning'>
+                <td>{{ link.id }}</td>
+                <td>{{ link.name }}</td>
+                <td>{{ link.address }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
         <script src="" async defer></script>
     </body>
 </html>
