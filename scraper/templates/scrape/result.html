@@ -11,24 +11,52 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <table class="table table-striped">
-            <thead>
-              <tr class='table-primary'>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Link</th>
-              </tr>
-            </thead>
-            <tbody>
-                {% for link in data %}
-              <tr class='table-warning'>
-                <td>{{ link.id }}</td>
-                <td>{{ link.name }}</td>
-                <td>{{ link.address }}</td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
+        <div class='container m-5'>
+            <div class='row'>
+                <div class='col-md-12'>
+                    <h2>Link Collector</h2>
+                </div>
+            </div>
+            <div class='row m-2'>
+                <div class='col-md-4'>
+                    <form method='POST' action='/'>
+                        {% csrf_token %}
+                        <input class='form-control' type='text' name='site' id='site' placeholder='enter site address'>
+                    </div>
+                    <div class='col-md-1'>
+                        <button class='btn btn-success' type='submit'>Scrape</button>
+                    </div>
+                    </form>
+                   
+                    <div class='col-md-7'>
+                        <a class='btn btn-danger' href='/delete'>Delete</a>
+                    </div>
+                
+            </div>
+            <div class='row'>
+                <div class='col-md-8'>
+                    <table class="table table-striped">
+                        <thead>
+                          <tr class='table-primary'>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Link</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            {% for link in data %}
+                          <tr class='table-warning'>
+                            <td>{{ link.id }}</td>
+                            <td>{{ link.name }}</td>
+                            <td>{{ link.address }}</td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+        
         <script src="" async defer></script>
     </body>
 </html>
