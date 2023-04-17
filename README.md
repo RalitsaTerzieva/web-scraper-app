@@ -7,7 +7,7 @@ You can use this custom Django scraper application to practice Django and Python
 
 ## Installation
 
-1. Clone th repository
+1. Clone the repository
 
 ```
 git clone https://github.com/RalitsaTerzieva/web-scraper-app
